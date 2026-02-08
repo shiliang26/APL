@@ -4,11 +4,33 @@
 
 🎉 **Our paper has been accepted to International Journal of Computer Vision (IJCV) in February 2026!**
 
-![APL Pipeline](./assets/apl.png)
 
 ## Abstract
 
 Text-to-image diffusion models, such as Stable Diffusion, generate highly realistic images from text descriptions. However, the generation of certain content at such high quality raises concerns. A prominent issue is the accurate depiction of identifiable facial images, which could lead to malicious deepfake generation and privacy violations. In this paper, we propose Anonymization Prompt Learning (APL) to address this problem. Specifically, we train a learnable prompt prefix for text-to-image diffusion models, which forces the model to generate anonymized facial identities, even when prompted to produce images of specific individuals. Extensive quantitative and qualitative experiments demonstrate the successful anonymization performance of APL, which anonymizes any specific individuals without compromising the quality of non-identity-specific image generation. Furthermore, we reveal the plug-and-play property of the learned prompt prefix, enabling its effective application across different pretrained text-to-image models for transferrable privacy and security protection against the risks of deepfakes.
+
+![APL Pipeline](./assets/apl.png)
+
+## Key Components
+
+### EmbeddingManager
+
+The `EmbeddingManager` class (in `ldm/modules/embedding_manager.py`) manages learnable prompt embeddings. It:
+- Initializes placeholder token embeddings (default: 'alz')
+- Supports multi-vector tokens (default: 10 vectors per token)
+- Handles embedding save/load operations
+- Integrates with CLIP text encoders
+
+### Training Process
+
+The training alternates between:
+1. **Identity anonymization**: Transforming specific person prompts to anonymized face attribute descriptions
+2. **General image preservation**: Maintaining quality for non-identity-specific prompts
+
+The loss function encourages the learned prefix to push identity-specific prompts toward anonymized representations while preserving general image quality.
+
+
+
 
 ## Installation
 
@@ -125,24 +147,6 @@ APL-main/
 │   └── data/              # Dataset loaders
 └── README.md
 ```
-
-## Key Components
-
-### EmbeddingManager
-
-The `EmbeddingManager` class (in `ldm/modules/embedding_manager.py`) manages learnable prompt embeddings. It:
-- Initializes placeholder token embeddings (default: 'alz')
-- Supports multi-vector tokens (default: 10 vectors per token)
-- Handles embedding save/load operations
-- Integrates with CLIP text encoders
-
-### Training Process
-
-The training alternates between:
-1. **Identity anonymization**: Transforming specific person prompts to anonymized face attribute descriptions
-2. **General image preservation**: Maintaining quality for non-identity-specific prompts
-
-The loss function encourages the learned prefix to push identity-specific prompts toward anonymized representations while preserving general image quality.
 
 
 ## Cite Us
