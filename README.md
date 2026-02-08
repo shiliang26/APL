@@ -1,7 +1,7 @@
 # Anonymization Prompt Learning (APL) 
 
 
-![Demo](./assets/demo.png)
+<img src="./assets/demo.png" alt="Demo" width="50%">
 
 ## News
 
