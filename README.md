@@ -1,5 +1,8 @@
 # Anonymization Prompt Learning (APL) 
 
+
+![Demo](./assets/demo.png)
+
 ## News
 
 🎉 **Our paper "Anonymization Prompt Learning for Facial Privacy-Preserving Text-to-Image Generation"[[arXiv](https://arxiv.org/abs/2405.16895)] has been accepted to International Journal of Computer Vision (IJCV) in February 2026.**
