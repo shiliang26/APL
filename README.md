@@ -27,7 +27,7 @@ The `EmbeddingManager` class (in `ldm/modules/embedding_manager.py`) manages lea
 ### Training Process
 
 The training alternates between:
-1. **Identity anonymization**: Transforming specific person prompts to anonymized face attribute descriptions
+1. **Identity anonymization**: Transforming specific person prompts to anonymized face attribute descriptions. The mapping from person names to anonymized attributes is defined in `people.py` (see the dataset preparation section).
 2. **General image preservation**: Maintaining quality for non-identity-specific prompts
 
 The loss function encourages the learned prefix to push identity-specific prompts toward anonymized representations while preserving general image quality.
@@ -60,6 +60,7 @@ pip install -r requirements.txt
      - Generic text-image pair dataset: You can use LAION dataset images (in `./data/laion/` directory) or your own generic text-image pair dataset. The dataset should contain image files and corresponding text prompts.
      - Prompt templates file (`./templates.txt`)
      - General prompts file (`./prompts.txt`)
+     - Person attributes mapping: The `people.py` file contains a dictionary mapping person names to anonymized face attribute descriptions. This is used during training to transform identity-specific prompts into anonymized representations. You can modify this file to include your own person names and their corresponding anonymized attributes.
 
 ## Usage
 
@@ -139,6 +140,7 @@ APL-main/
 ├── test_id.py              # Identity anonymization testing
 ├── test_fid_clip_score.py  # FID and CLIP score evaluation
 ├── dataset_generation.py   # Dataset generation utilities
+├── people.py               # Person names to anonymized attributes mapping
 ├── args/
 │   └── clip_args.py        # CLIP evaluation arguments
 ├── configs/
