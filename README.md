@@ -159,10 +159,14 @@ APL-main/
 If you find our work helpful, please cite our paper:
 
 ```bibtex
-@article{shi2024anonymization,
+@article{shi2026anonymization,
   title={Anonymization prompt learning for facial privacy-preserving text-to-image generation},
   author={Shi, Liang and Zhang, Jie and Shan, Shiguang},
-  journal={arXiv preprint arXiv:2405.16895},
-  year={2024}
+  journal={International Journal of Computer Vision},
+  volume={134},
+  number={4},
+  pages={192},
+  year={2026},
+  publisher={Springer}
 }
 ```
