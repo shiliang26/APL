@@ -5,7 +5,7 @@
 
 ## News
 
-🎉 Our paper "Anonymization Prompt Learning for Facial Privacy-Preserving Text-to-Image Generation"[[arXiv](https://arxiv.org/abs/2405.16895)] has been accepted to **International Journal of Computer Vision (IJCV)** in February 2026.
+🎉 Our paper "Anonymization Prompt Learning for Facial Privacy-Preserving Text-to-Image Generation"[[Link](https://link.springer.com/article/10.1007/s11263-026-02783-6)][[arXiv](https://arxiv.org/abs/2405.16895)] has been accepted to **International Journal of Computer Vision (IJCV)** in February 2026.
 
 
 ## Abstract
